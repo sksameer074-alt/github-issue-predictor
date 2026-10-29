@@ -97,9 +97,11 @@ The single test split (243 issues) turned out to be **lucky**: every model score
 
 ## What I'd try next
 
-- **Predict on day 14 instead of day 7**, and compare the scores. More time means more information, but the prediction comes later, so it's a trade-off worth measuring.
-- **Measure how busy the maintainers are.** For example, count how many issues were opened in the same week. In a busy week, each issue may get less attention. This has to use only information from before day 7, to avoid leakage.
-- **Use labels as they were on day 7.** Labels like "Bug" or "Enhancement" could help, but the API only shows today's labels. GitHub keeps a history of when each label was added, so it's possible to rebuild the labels as they were on day 7.
+-What I'd try next
+Better features from real examples. Two issues with almost identical features had opposite outcomes: a small, contained bug got fixed, while a deep float-precision problem didn't. The model can't see how hard a fix is. Ideas: whether a maintainer said "PR welcome" in week 1, whether someone volunteered with "take," and whether the issue is really a question rather than a bug.
+Predict on day 14 instead of day 7, and compare the scores. More time means more information, but the prediction comes later, so it's a trade-off worth measuring.
+Measure how busy the maintainers are. For example, count how many issues were opened in the same week. In a busy week, each issue may get less attention. This has to use only information from before day 7, to avoid leakage.
+Use labels as they were on day 7. Labels like "Bug" or "Enhancement" could help, but the API only shows today's labels. GitHub keeps a history of when each label was added, so it's possible to rebuild the labels as they were on day 7.
 
 ## Related work
 
